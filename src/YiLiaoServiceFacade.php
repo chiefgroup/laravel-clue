@@ -16,6 +16,6 @@ class YiLiaoServiceFacade extends Facade
      */
     public static function getFacadeAccessor()
     {
-        return 'IdGeneratorService';
+        return 'YiLiaoService';
     }
 }

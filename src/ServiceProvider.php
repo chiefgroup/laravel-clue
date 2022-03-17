@@ -44,7 +44,7 @@ class ServiceProvider extends LaravelServiceProvider implements DeferrableProvid
         $clientFactory = new ClientFactory();
 
         $this->app->singleton('YiLiaoService', function ($app) use ($clientFactory) {
-            ServiceManager::register($service = 'IdGeneratorService', $protocol = 'jsonrpc-rpc', [
+            ServiceManager::register($service = 'YiLiaoService', $protocol = 'jsonrpc-rpc', [
                 ServiceManager::NODES => [
                     [$host = config('qf_clue.node.host'), $port = config('qf_clue.node.port_http')],
                 ],
