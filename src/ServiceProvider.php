@@ -1,6 +1,6 @@
 <?php
 
-namespace ChiefGroup\LaravelShare;
+namespace ChiefGroup\LaravelClue;
 
 use Hyperf\Jet\ClientFactory;
 use Hyperf\Jet\DataFormatter\DataFormatter;

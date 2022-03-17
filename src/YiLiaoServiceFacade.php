@@ -1,7 +1,7 @@
 <?php
 
 
-namespace ChiefGroup\LaravelShare;
+namespace ChiefGroup\LaravelClue;
 use Illuminate\Support\Facades\Facade;
 
 /**
