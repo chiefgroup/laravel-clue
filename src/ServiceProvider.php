@@ -5,6 +5,7 @@ namespace ChiefGroup\LaravelClue;
 use Hyperf\Jet\ClientFactory;
 use Hyperf\Jet\DataFormatter\DataFormatter;
 use Hyperf\Jet\Packer\JsonEofPacker;
+use Hyperf\Jet\Packer\JsonLengthPacker;
 use Hyperf\Jet\PathGenerator\PathGenerator;
 use Hyperf\Jet\ProtocolManager;
 use Hyperf\Jet\ServiceManager;
@@ -35,8 +36,8 @@ class ServiceProvider extends LaravelServiceProvider implements DeferrableProvid
     {
         //注册协议
         ProtocolManager::register($protocol = 'jsonrpc', [
-            ProtocolManager::TRANSPORTER    => new StreamSocketTransporter(),
-            ProtocolManager::PACKER         => new JsonEofPacker(),
+            ProtocolManager::TRANSPORTER => new StreamSocketTransporter(),
+            ProtocolManager::PACKER => new JsonLengthPacker(),
             ProtocolManager::PATH_GENERATOR => new PathGenerator(),
             ProtocolManager::DATA_FORMATTER => new DataFormatter(),
         ]);
@@ -44,13 +45,13 @@ class ServiceProvider extends LaravelServiceProvider implements DeferrableProvid
         $clientFactory = new ClientFactory();
 
         $this->app->singleton('YiLiaoService', function ($app) use ($clientFactory) {
-            ServiceManager::register($service = 'YiLiaoService', $protocol = 'jsonrpc-rpc', [
+            ServiceManager::register($service = 'YiLiaoService', $protocol = 'jsonrpc', [
                 ServiceManager::NODES => [
-                    [$host = config('qf_clue.node.host'), $port = config('qf_clue.node.port_http')],
+                    [$host = config('qf_clue.node.host'), $port = config('qf_clue.node.port')],
                 ],
             ]);
 
-            return $clientFactory->create($service = 'YiLiaoService', $protocol = 'jsonrpc-rpc');
+            return $clientFactory->create($service = 'YiLiaoService', $protocol = 'jsonrpc');
         });
 
     }
