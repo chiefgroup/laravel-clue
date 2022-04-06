@@ -36,8 +36,8 @@ class ServiceProvider extends LaravelServiceProvider implements DeferrableProvid
     {
         //注册协议
         ProtocolManager::register($protocol = 'jsonrpc', [
-            ProtocolManager::TRANSPORTER => new StreamSocketTransporter(),
-            ProtocolManager::PACKER => new JsonLengthPacker(),
+            ProtocolManager::TRANSPORTER    => new StreamSocketTransporter(),
+            ProtocolManager::PACKER         => new JsonEofPacker(),
             ProtocolManager::PATH_GENERATOR => new PathGenerator(),
             ProtocolManager::DATA_FORMATTER => new DataFormatter(),
         ]);
@@ -53,7 +53,6 @@ class ServiceProvider extends LaravelServiceProvider implements DeferrableProvid
 
             return $clientFactory->create($service = 'YiLiaoService', $protocol = 'jsonrpc');
         });
-
     }
 
     /**
