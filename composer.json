@@ -21,7 +21,7 @@
                 "ChiefGroup\\LaravelClue\\ServiceProvider"
             ],
             "aliases": {
-                "IdGenerator": "ChiefGroup\\LaravelClue\\YiLiaoServiceFacade"
+                "YiLiaoService": "ChiefGroup\\LaravelClue\\YiLiaoServiceFacade"
             }
         }
     },
