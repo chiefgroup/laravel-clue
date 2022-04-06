@@ -21,7 +21,7 @@
                 "ChiefGroup\\LaravelClue\\ServiceProvider"
             ],
             "aliases": {
-                "YiLiaoService": "ChiefGroup\\LaravelClue\\YiLiaoServiceFacade"
+                "easyChatService": "ChiefGroup\\LaravelClue\\YiLiaoServiceFacade"
             }
         }
     },
