@@ -6,6 +6,6 @@ return [
         //jsonrpc
         'port' => env('QF_CLUE_JSON_NODE_PORT', 9703),
         //jsonrpc-http
-        'port_http' => env('QF_CLUE_NODE_PORT_HTTP', 9701)
+        'port_http' => env('QF_CLUE_NODE_PORT_HTTP', 9704)
     ]
 ];
