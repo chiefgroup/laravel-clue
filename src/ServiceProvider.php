@@ -5,11 +5,9 @@ namespace ChiefGroup\LaravelClue;
 use Hyperf\Jet\ClientFactory;
 use Hyperf\Jet\DataFormatter\DataFormatter;
 use Hyperf\Jet\Packer\JsonEofPacker;
-use Hyperf\Jet\Packer\JsonLengthPacker;
 use Hyperf\Jet\PathGenerator\PathGenerator;
 use Hyperf\Jet\ProtocolManager;
 use Hyperf\Jet\ServiceManager;
-use Hyperf\Jet\Transporter\GuzzleHttpTransporter;
 use Hyperf\Jet\Transporter\StreamSocketTransporter;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
@@ -53,6 +51,16 @@ class ServiceProvider extends LaravelServiceProvider implements DeferrableProvid
 
             return $clientFactory->create($service = 'YiLiaoService', $protocol = 'jsonrpc');
         });
+
+        $this->app->singleton('FeiyuService', function ($app) use ($clientFactory) {
+            ServiceManager::register($service = 'FeiyuService', $protocol = 'jsonrpc', [
+                ServiceManager::NODES => [
+                    [$host = config('qf_clue.node.host'), $port = config('qf_clue.node.port')],
+                ],
+            ]);
+
+            return $clientFactory->create($service = 'FeiyuService', $protocol = 'jsonrpc');
+        });
     }
 
     /**
@@ -62,7 +70,7 @@ class ServiceProvider extends LaravelServiceProvider implements DeferrableProvid
      */
     public function provides()
     {
-        return ['YiLiaoService'];
+        return ['YiLiaoService', 'FeiyuService'];
     }
 
 }

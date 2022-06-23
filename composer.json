@@ -12,8 +12,18 @@
     "require": {
         "hyperf/jet": "^0.4.0"
     },
+    "require-dev": {
+        "guzzlehttp/guzzle": "^6.5",
+        "hyperf/composer-plugin": "^1.0",
+        "laravel/framework": "^6.0",
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "hyperf/composer-plugin": true
+        }
     },
     "extra": {
         "laravel": {
@@ -21,7 +31,8 @@
                 "ChiefGroup\\LaravelClue\\ServiceProvider"
             ],
             "aliases": {
-                "YiLiaoService": "ChiefGroup\\LaravelClue\\YiLiaoServiceFacade"
+                "YiLiaoService": "ChiefGroup\\LaravelClue\\YiLiaoServiceFacade",
+                "FeiYu": "ChiefGroup\\LaravelClue\\FeiYuFacade"
             }
         }
     },
