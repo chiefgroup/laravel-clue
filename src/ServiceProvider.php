@@ -61,6 +61,16 @@ class ServiceProvider extends LaravelServiceProvider implements DeferrableProvid
 
             return $clientFactory->create($service = 'FeiyuService', $protocol = 'jsonrpc');
         });
+
+        $this->app->singleton('FormClueService', function ($app) use ($clientFactory) {
+            ServiceManager::register($service = 'FormClueService', $protocol = 'jsonrpc', [
+                ServiceManager::NODES => [
+                    [$host = config('qf_clue.node.host'), $port = config('qf_clue.node.port')],
+                ],
+            ]);
+
+            return $clientFactory->create($service = 'FormClueService', $protocol = 'jsonrpc');
+        });
     }
 
     /**
@@ -70,7 +80,7 @@ class ServiceProvider extends LaravelServiceProvider implements DeferrableProvid
      */
     public function provides()
     {
-        return ['YiLiaoService', 'FeiyuService'];
+        return ['YiLiaoService', 'FeiyuService', 'FormClueService'];
     }
 
 }
