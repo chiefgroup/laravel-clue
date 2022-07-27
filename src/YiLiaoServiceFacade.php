@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * Class YiLiaoServiceFacade
  *
- * @method static get(string $item, string $startTime, string $endTime)
+ * @method static get(string $item, string $startTime, string $endTime, string $periodField)
  */
 class YiLiaoServiceFacade extends Facade
 {
