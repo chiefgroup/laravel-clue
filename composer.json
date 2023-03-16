@@ -33,7 +33,9 @@
             "aliases": {
                 "YiLiaoService": "ChiefGroup\\LaravelClue\\YiLiaoServiceFacade",
                 "FeiYu": "ChiefGroup\\LaravelClue\\FeiYuFacade",
-                "FormClue": "ChiefGroup\\LaravelClue\\FormClueFacade"
+                "FormClue": "ChiefGroup\\LaravelClue\\FormClueFacade",
+                "Filter": "ChiefGroup\\LaravelClue\\FilterFacade",
+                "Tag": "ChiefGroup\\LaravelClue\\TagFacade"
             }
         }
     },
