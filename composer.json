@@ -35,7 +35,8 @@
                 "FeiYu": "ChiefGroup\\LaravelClue\\FeiYuFacade",
                 "FormClue": "ChiefGroup\\LaravelClue\\FormClueFacade",
                 "Filter": "ChiefGroup\\LaravelClue\\FilterFacade",
-                "Tag": "ChiefGroup\\LaravelClue\\TagFacade"
+                "Tag": "ChiefGroup\\LaravelClue\\TagFacade",
+                "Sheet": "ChiefGroup\\LaravelClue\\SheetFacade"
             }
         }
     },
