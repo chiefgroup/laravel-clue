@@ -79,7 +79,7 @@ class ServiceProvider extends LaravelServiceProvider implements DeferrableProvid
                 ],
             ]);
 
-            return $clientFactory->create($service = 'FormService', $protocol = 'jsonrpc');
+            return $clientFactory->create($service = 'SheetService', $protocol = 'jsonrpc');
         });
 
         $this->app->singleton('FilterService', function ($app) use ($clientFactory) {
