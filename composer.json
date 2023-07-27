@@ -36,7 +36,8 @@
                 "FormClue": "ChiefGroup\\LaravelClue\\FormClueFacade",
                 "Filter": "ChiefGroup\\LaravelClue\\FilterFacade",
                 "Tag": "ChiefGroup\\LaravelClue\\TagFacade",
-                "Sheet": "ChiefGroup\\LaravelClue\\SheetFacade"
+                "Sheet": "ChiefGroup\\LaravelClue\\SheetFacade",
+                "OceanEngine": "ChiefGroup\\LaravelClue\\OceanEngineFacade"
             }
         }
     },
