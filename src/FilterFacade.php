@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * Class FilterFacade
  *
- *  @method static getClues($systemId, string $startAt, string $endAt, string $whereBetween = 'created_at');
+ *  @method static getClues(string $code, string $startAt, string $endAt, string $whereBetweenField = 'created_at', int $page = 1);
  */
 class FilterFacade extends Facade
 {
