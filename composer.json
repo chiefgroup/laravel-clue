@@ -37,7 +37,8 @@
                 "Filter": "ChiefGroup\\LaravelClue\\FilterFacade",
                 "Tag": "ChiefGroup\\LaravelClue\\TagFacade",
                 "Sheet": "ChiefGroup\\LaravelClue\\SheetFacade",
-                "OceanEngine": "ChiefGroup\\LaravelClue\\OceanEngineFacade"
+                "OceanEngine": "ChiefGroup\\LaravelClue\\OceanEngineFacade",
+                "OpenDouYin": "ChiefGroup\\LaravelClue\\OpenDouYinFacade"
             }
         }
     },

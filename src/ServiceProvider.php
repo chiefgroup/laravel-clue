@@ -111,6 +111,16 @@ class ServiceProvider extends LaravelServiceProvider implements DeferrableProvid
 
             return $clientFactory->create($service = 'OceanEngineService', $protocol = 'jsonrpc');
         });
+
+        $this->app->singleton('OpenDouYinService', function ($app) use ($clientFactory) {
+            ServiceManager::register($service = 'OpenDouYinService', $protocol = 'jsonrpc', [
+                ServiceManager::NODES => [
+                    [$host = config('qf_clue.node.host'), $port = config('qf_clue.node.port')],
+                ],
+            ]);
+
+            return $clientFactory->create($service = 'OpenDouYinService', $protocol = 'jsonrpc');
+        });
     }
 
     /**
@@ -120,7 +130,7 @@ class ServiceProvider extends LaravelServiceProvider implements DeferrableProvid
      */
     public function provides()
     {
-        return ['YiLiaoService', 'FeiyuService', 'FormService', 'SheetService', 'TagService', 'FilterService', 'OceanEngineService'];
+        return ['YiLiaoService', 'FeiyuService', 'FormService', 'SheetService', 'TagService', 'FilterService', 'OceanEngineService', 'OpenDouYinService'];
     }
 
 }
