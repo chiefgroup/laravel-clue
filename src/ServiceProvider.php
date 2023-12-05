@@ -21,7 +21,7 @@ class ServiceProvider extends LaravelServiceProvider implements DeferrableProvid
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/config.php' => config_path('qf_clue.php')
+            __DIR__ . '/../config/qf_clue.php' => config_path('qf_clue.php')
         ], 'config');
     }
 
@@ -55,7 +55,7 @@ class ServiceProvider extends LaravelServiceProvider implements DeferrableProvid
         $this->app->singleton('FeiyuService', function ($app) use ($clientFactory) {
             ServiceManager::register($service = 'FeiyuService', $protocol = 'jsonrpc', [
                 ServiceManager::NODES => [
-                    [$host = config('qf_clue.node.host'), $port = config('qf_clue.node.port')],
+                    [$host = config('qf_clue.node.host', 'host.docker.internal'), $port = config('qf_clue.node.port', 9703)],
                 ],
             ]);
 
