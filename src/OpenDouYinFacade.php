@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Facade;
  *
  * @method static mixed request(string $method, string $path, array $option)
  * @method static string getAccessToken(bool $force = false)
+ * @method static mixed getAccessTokenByCode(string $code, bool $force = false)
  */
 class OpenDouYinFacade extends Facade
 {
