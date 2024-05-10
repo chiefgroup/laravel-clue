@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static searchClues(array $searchArr, array $orderArr, $page, $prePage)
  * @method static searchAccounts(array $searchArr, array $orderArr, $page, $prePage)
  */
-class FeiyuFacade extends Facade
+class FeiYuFacade extends Facade
 {
     /**
      * @return string
