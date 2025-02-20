@@ -121,6 +121,26 @@ class ServiceProvider extends LaravelServiceProvider implements DeferrableProvid
 
             return $clientFactory->create($service = 'OpenDouYinService', $protocol = 'jsonrpc');
         });
+
+	    $this->app->singleton('RedBookService', function ($app) use ($clientFactory) {
+		    ServiceManager::register($service = 'RedBookService', $protocol = 'jsonrpc', [
+			    ServiceManager::NODES => [
+				    [$host = config('qf_clue.node.host'), $port = config('qf_clue.node.port')],
+			    ],
+		    ]);
+
+		    return $clientFactory->create($service = 'RedBookService', $protocol = 'jsonrpc');
+	    });
+
+	    $this->app->singleton('MeiqiaService', function ($app) use ($clientFactory) {
+		    ServiceManager::register($service = 'MeiqiaService', $protocol = 'jsonrpc', [
+			    ServiceManager::NODES => [
+				    [$host = config('qf_clue.node.host'), $port = config('qf_clue.node.port')],
+			    ],
+		    ]);
+
+		    return $clientFactory->create($service = 'MeiqiaService', $protocol = 'jsonrpc');
+	    });
     }
 
     /**
@@ -130,7 +150,7 @@ class ServiceProvider extends LaravelServiceProvider implements DeferrableProvid
      */
     public function provides()
     {
-        return ['YiLiaoService', 'FeiyuService', 'FormService', 'SheetService', 'TagService', 'FilterService', 'OceanEngineService', 'OpenDouYinService'];
+        return ['YiLiaoService', 'FeiyuService', 'FormService', 'SheetService', 'TagService', 'FilterService', 'OceanEngineService', 'OpenDouYinService', 'RedBookService', 'MeiqiaService'];
     }
 
 }

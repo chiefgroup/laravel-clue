@@ -38,7 +38,9 @@
                 "Tag": "ChiefGroup\\LaravelClue\\TagFacade",
                 "Sheet": "ChiefGroup\\LaravelClue\\SheetFacade",
                 "OceanEngine": "ChiefGroup\\LaravelClue\\OceanEngineFacade",
-                "OpenDouYin": "ChiefGroup\\LaravelClue\\OpenDouYinFacade"
+                "OpenDouYin": "ChiefGroup\\LaravelClue\\OpenDouYinFacade",
+                "RedBook": "ChiefGroup\\LaravelClue\\RedBookFacade",
+                "MeiqiaService": "ChiefGroup\\LaravelClue\\MeiqiaServiceFacade"
             }
         }
     },
